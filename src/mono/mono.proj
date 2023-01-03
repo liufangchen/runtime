@@ -236,7 +236,7 @@
     <!-- ARM Linux cross build options on CI -->
     <ItemGroup Condition="'$(TargetsAndroid)' != 'true' and '$(TargetsLinuxBionic)' != 'true' and '$(MonoCrossDir)' != '' and ('$(TargetArchitecture)' == 'arm' or '$(TargetArchitecture)' == 'armv6' or '$(TargetArchitecture)' == 'arm64')">
       <_MonoCMakeArgs Include="-DCMAKE_TOOLCHAIN_FILE=$(CrossToolchainFile)" />
-      <_MonoCMakeArgs Condition="'$(TargetOS)' == 'Linux' and ('$(TargetArchitecture)' == 'arm' or '$(TargetArchitecture)' == 'armv6')" Include="-DMONO_ARM_FPU=vfp-hard" />
+      <_MonoCMakeArgs Condition="'$(TargetOS)' == 'linux' and ('$(TargetArchitecture)' == 'arm' or '$(TargetArchitecture)' == 'armv6')" Include="-DMONO_ARM_FPU=vfp-hard" />
       <_MonoBuildEnv Condition="'$(Platform)' == 'arm64'" Include="TARGET_BUILD_ARCH=arm64" />
       <_MonoBuildEnv Condition="'$(Platform)' == 'arm'" Include="TARGET_BUILD_ARCH=arm" />
       <_MonoBuildEnv Condition="'$(Platform)' == 'armv6'" Include="TARGET_BUILD_ARCH=armv6" />
@@ -466,7 +466,7 @@
       <_MonoCFLAGS Include="-Wl,--build-id=sha1" />
       <_MonoCXXFLAGS Include="-Wl,--build-id=sha1" />
     </ItemGroup>
-    <ItemGroup Condition="'$(RealTargetOS)' == 'Linux'">
+    <ItemGroup Condition="'$(RealTargetOS)' == 'linux'">
       <_MonoAOTCFLAGS Include="-Wl,--build-id=sha1" />
       <_MonoAOTCXXFLAGS Include="-Wl,--build-id=sha1" />
     </ItemGroup>
@@ -624,7 +624,7 @@
     </PropertyGroup>
 
     <!-- Linux specific options -->
-    <ItemGroup Condition="'$(RealTargetOS)' == 'Linux' or $([MSBuild]::IsOSPlatform('Linux'))">
+    <ItemGroup Condition="'$(RealTargetOS)' == 'linux' or $([MSBuild]::IsOSPlatform('Linux'))">
       <_LibClang Include="$(ANDROID_NDK_ROOT)/toolchains/llvm/prebuilt/$(MonoToolchainPrebuiltOS)/lib64/libclang.so.*"/>
     </ItemGroup>
     <PropertyGroup Condition="'$(TargetsLinux)' == 'true' and '$(Platform)' == 'arm64'">
@@ -635,7 +635,7 @@
     </PropertyGroup>
 
     <!-- macOS host specific options -->
-    <ItemGroup Condition="'$(RealTargetOS)' == 'OSX' or $([MSBuild]::IsOSPlatform('OSX'))">
+    <ItemGroup Condition="'$(RealTargetOS)' == 'osx' or $([MSBuild]::IsOSPlatform('OSX'))">
       <MonoAOTCMakeArgs Include="-DCMAKE_OSX_DEPLOYMENT_TARGET=$(macOSVersionMin)" />
     </ItemGroup>
 
@@ -652,7 +652,7 @@
     </PropertyGroup>
 
     <!-- Windows specific options -->
-    <ItemGroup Condition="'$(RealTargetOS)' == 'Windows' or $([MSBuild]::IsOSPlatform('Windows'))">
+    <ItemGroup Condition="'$(RealTargetOS)' == 'windows' or $([MSBuild]::IsOSPlatform('Windows'))">
       <_MonoAOTCPPFLAGS Include="-DHOST_WIN32" />
       <_MonoAOTCPPFLAGS Include="-D__WIN32__" />
       <_MonoAOTCPPFLAGS Include="-DWIN32" />
