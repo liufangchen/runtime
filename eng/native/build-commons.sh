@@ -28,7 +28,7 @@ check_prereqs()
 {
     echo "Checking prerequisites..."
 
-    if [[ "$__HostOS" == "OSX" ]]; then
+    if [[ "$__HostOS" == "osx" ]]; then
         # Check presence of pkg-config on the path
         command -v pkg-config 2>/dev/null || { echo >&2 "Please install pkg-config before running this script, see https://github.com/dotnet/runtime/blob/main/docs/workflow/requirements/macos-requirements.md"; exit 1; }
 
@@ -63,7 +63,7 @@ build_native()
     # All set to commence the build
     echo "Commencing build of \"$target\" target in \"$message\" for $__TargetOS.$__TargetArch.$__BuildType in $intermediatesDir"
 
-    if [[ "$targetOS" == OSX || "$targetOS" == MacCatalyst ]]; then
+    if [[ "$targetOS" == osx || "$targetOS" == maccatalyst ]]; then
         if [[ "$hostArch" == x64 ]]; then
             cmakeArgs="-DCMAKE_OSX_ARCHITECTURES=\"x86_64\" $cmakeArgs"
         elif [[ "$hostArch" == arm64 ]]; then
@@ -74,11 +74,11 @@ build_native()
         fi
     fi
 
-    if [[ "$targetOS" == MacCatalyst ]]; then
+    if [[ "$targetOS" == maccatalyst ]]; then
         cmakeArgs="-DCMAKE_SYSTEM_VARIANT=MacCatalyst $cmakeArgs"
     fi
 
-    if [[ ( "$targetOS" == Android || "$targetOS" == linux-bionic ) && -z "$ROOTFS_DIR" ]]; then
+    if [[ ( "$targetOS" == android || "$targetOS" == linux-bionic ) && -z "$ROOTFS_DIR" ]]; then
         if [[ -z "$ANDROID_NDK_ROOT" ]]; then
             echo "Error: You need to set the ANDROID_NDK_ROOT environment variable pointing to the Android NDK root."
             exit 1
@@ -163,7 +163,7 @@ build_native()
         popd
     else
         cmake_command=cmake
-        if [[ "$build_arch" == "wasm" && "$__TargetOS" == "Browser" ]]; then
+        if [[ "$build_arch" == "wasm" && "$__TargetOS" == "browser" ]]; then
             cmake_command="emcmake cmake"
             echo "Executing $cmake_command --build \"$intermediatesDir\" --target $target -- -j $__NumProc"
             $cmake_command --build "$intermediatesDir" --target $target -- -j "$__NumProc"
@@ -460,13 +460,13 @@ fi
 if [[ "$__TargetArch" == wasm ]]; then
     # nothing to do here
     true
-elif [[ "$__TargetOS" == iOS || "$__TargetOS" == iOSSimulator ]]; then
+elif [[ "$__TargetOS" == ios || "$__TargetOS" == iossimulator ]]; then
     # nothing to do here
     true
-elif [[ "$__TargetOS" == tvOS || "$__TargetOS" == tvOSSimulator ]]; then
+elif [[ "$__TargetOS" == tvos || "$__TargetOS" == tvossimulator ]]; then
     # nothing to do here
     true
-elif [[ "$__TargetOS" == Android ]]; then
+elif [[ "$__TargetOS" == android ]]; then
     # nothing to do here
     true
 else

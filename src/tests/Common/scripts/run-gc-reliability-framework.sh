@@ -3,27 +3,27 @@
 OSName=$(uname -s)
 case $OSName in
     Darwin)
-        OS=OSX
+        OS=osx
         ;;
 
     FreeBSD)
-        OS=FreeBSD
+        OS=freebsd
         ;;
 
     Linux)
-        OS=Linux
+        OS=linux
         ;;
 
     NetBSD)
-        OS=NetBSD
+        OS=netbsd
         ;;
 
     SunOS)
-        OS=SunOS
+        OS=sunos
         ;;
     *)
         echo "Unsupported OS $OSName detected, configuring as if for Linux"
-        OS=Linux
+        OS=linux
         ;;
 esac
 

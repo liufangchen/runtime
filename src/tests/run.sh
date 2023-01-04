@@ -99,7 +99,7 @@ do
             buildArch="wasm"
             ;;
         Android)
-            buildOS="Android"
+            buildOS="android"
             ;;
         debug|Debug)
             buildConfiguration="Debug"
@@ -208,11 +208,11 @@ echo "Build Architecture            : ${buildArch}"
 echo "Build Configuration           : ${buildConfiguration}"
 
 if [ "$buildArch" = "wasm" ]; then
-    runtestPyArguments+=("-os" "Browser")
+    runtestPyArguments+=("-os" "browser")
 fi
 
-if [ "$buildOS" = "Android" ]; then
-    runtestPyArguments+=("-os" "Android")
+if [ "$buildOS" = "android" ]; then
+    runtestPyArguments+=("-os" "android")
 fi
 
 if [[ -n "$testRootDir" ]]; then
