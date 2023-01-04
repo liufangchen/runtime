@@ -12,7 +12,7 @@ function print_usage {
     echo '  -h|--help                        : Show usage information.'
     echo '  -v, --verbose                    : Show output from each test.'
     echo '  <arch>                           : One of x64, x86, arm, arm64, loongarch64, riscv64, wasm. Defaults to current architecture.'
-    echo '  Android                          : Set build OS to Android.'
+    echo '  android                          : Set build OS to Android.'
     echo '  --test-env=<path>                : Script to set environment variables for tests'
     echo '  --testRootDir=<path>             : Root directory of the test build (e.g. runtime/artifacts/tests/windows.x64.Debug).'
     echo '  --enableEventLogging             : Enable event logging through LTTNG.'
@@ -98,7 +98,7 @@ do
         wasm)
             buildArch="wasm"
             ;;
-        Android)
+        android)
             buildOS="android"
             ;;
         debug|Debug)

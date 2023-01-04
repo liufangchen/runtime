@@ -18,11 +18,11 @@ Run the following command in a terminal:
 ./build.sh mono+libs -os <TARGET_OS> -arch <TARGET_ARCHITECTURE>
 ```
 where `<TARGET_OS>` is one of the following:
-- iOSSimulator
-- tvOSSimulator
-- MacCatalyst
-- iOS
-- tvOS
+- iossimulator
+- tvossimulator
+- maccatalyst
+- ios
+- tvos
 
 and `<TARGET_ARCHITECTURE>` is one of the following:
 - x64
@@ -30,12 +30,12 @@ and `<TARGET_ARCHITECTURE>` is one of the following:
 
 e.g., to build for an iOS simulator, run:
 ```
-./build.sh mono+libs -os iOSSimulator -arch x64
+./build.sh mono+libs -os iossimulator -arch x64
 ```
 
 Run tests one by one for each test suite on a simulator:
 ```
-./build.sh libs.tests -os iOSSimulator -arch x64 -test
+./build.sh libs.tests -os iossimulator -arch x64 -test
 ```
 
 ### Building for a device
@@ -46,7 +46,7 @@ In order to run the tests on a device:
 
 For example:
 ```
-./build.sh libs.tests -os iOS -arch x64 -test /p:DevTeamProvisioning=H1A2B3C4D5
+./build.sh libs.tests -os ios -arch x64 -test /p:DevTeamProvisioning=H1A2B3C4D5
 ```
 Other possible options are:
 - to sign with an adhoc key by setting `/p:DevTeamProvisioning=adhoc`

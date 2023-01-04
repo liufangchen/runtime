@@ -40,7 +40,7 @@ function Get-Help() {
   Write-Host "                                 [Default: Debug]"
   Write-Host "  -librariesConfiguration (-lc)  Libraries build configuration: Debug or Release."
   Write-Host "                                 [Default: Debug]"
-  Write-Host "  -os                            Target operating system: windows, Linux, OSX, Android, wasi or Browser."
+  Write-Host "  -os                            Target operating system: windows, linux, osx, android, wasi or browser."
   Write-Host "                                 [Default: Your machine's OS.]"
   Write-Host "  -runtimeConfiguration (-rc)    Runtime build configuration: Debug, Release or Checked."
   Write-Host "                                 Checked is exclusive to the CLR runtime. It is the same as Debug, except code is"
@@ -235,11 +235,6 @@ if ($null -ne $properties -and $actionPassedIn -ne $true) {
 
 if (!$actionPassedIn) {
   $arguments = "-restore -build"
-}
-
-if ($PSBoundParameters.ContainsKey('os') -and $PSBoundParameters['os'] -eq "Browser") {
-  # make sure it is capitalized
-  $PSBoundParameters['os'] = "Browser"
 }
 
 foreach ($argument in $PSBoundParameters.Keys)

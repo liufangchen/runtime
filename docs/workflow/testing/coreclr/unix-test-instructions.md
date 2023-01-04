@@ -149,12 +149,12 @@ Run tests:
 To run all tests including disabled tests
 ```sh
 ./src/coreclr/pal/tests/palsuite/runpaltests.sh $(pwd)/artifacts/bin/coreclr/$(uname).x64.Debug/paltests
-# on macOS, replace $(uname) with OSX
+# on macOS, replace $(uname) with osx
 ```
 To only run enabled tests for the platform the tests were built for:
 ```sh
 artifacts/bin/coreclr/$(uname).x64.Debug/paltests/runpaltests.sh $(pwd)/artifacts/bin/coreclr/$(uname).x64.Debug/paltests
-# on macOS, replace $(uname) with OSX
+# on macOS, replace $(uname) with osx
 ```
 To run only specific tests, edit paltestlist.txt locally to delete the ones you don't want to run.
 

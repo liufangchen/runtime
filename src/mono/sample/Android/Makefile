@@ -19,7 +19,7 @@ DEPLOY_AND_RUN?=true
 all: runtimepack run
 
 runtimepack:
-	../../../../build.sh Mono+Libs -os Android -arch $(MONO_ARCH) -c $(MONO_CONFIG)
+	../../../../build.sh mono+libs -os android -arch $(MONO_ARCH) -c $(MONO_CONFIG)
 
 run:
 	$(DOTNET) publish \

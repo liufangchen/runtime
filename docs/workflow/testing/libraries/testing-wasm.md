@@ -49,11 +49,11 @@ PATH=/Users/<your_user>/.geckodriver:$PATH
 
 Now we're ready to build everything for WebAssembly (for more details, please read [this document](../../building/libraries/webassembly-instructions.md#building-everything)):
 ```bash
-./build.sh -os Browser -c Release
+./build.sh -os browser -c Release
 ```
 and even run tests one by one for each library:
 ```
-./build.sh libs.tests -test -os Browser -c Release
+./build.sh libs.tests -test -os browser -c Release
 ```
 
 ### Running individual test suites using JavaScript engine

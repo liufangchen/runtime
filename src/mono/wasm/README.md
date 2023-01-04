@@ -41,7 +41,7 @@ If `EMSDK_PATH` is not set, the `emsdk` should be provisioned automatically duri
 
 * To build everything
 
-`build.cmd -os Browser -subset mono+libs` in the repo top level directory.
+`build.cmd -os browser -subset mono+libs` in the repo top level directory.
 
 # Running tests
 

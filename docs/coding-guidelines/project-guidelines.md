@@ -19,7 +19,7 @@ Below is a list of all the various options we pivot the project builds on:
 
 - **Target Frameworks:** .NETFramework, .NETStandard, .NETCoreApp
 - **Platform Runtimes:** .NETFramework (aka CLR/Desktop), CoreCLR, Mono
-- **OS:** windows, Linux, OSX, FreeBSD, AnyOS
+- **OS:** windows, linux, osx, freebsd, AnyOS
 - **Flavor:** Debug, Release
 
 ## Individual build properties

@@ -1,24 +1,24 @@
 #!/usr/bin/env bash
 
-OSName=$(uname -s)
+OSName=$(uname -s | tr '[A-Z]' '[a-z]')
 case $OSName in
-    Darwin)
+    darwin)
         OS=osx
         ;;
 
-    FreeBSD)
+    freeBSD)
         OS=freebsd
         ;;
 
-    Linux)
+    linux)
         OS=linux
         ;;
 
-    NetBSD)
+    netbsd)
         OS=netbsd
         ;;
 
-    SunOS)
+    sunos)
         OS=sunos
         ;;
     *)

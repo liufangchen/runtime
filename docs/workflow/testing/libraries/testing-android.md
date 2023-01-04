@@ -68,11 +68,11 @@ export ANDROID_NDK_ROOT=<PATH-TO-ANDROID-NDK>
 
 Now we're ready to build everything for Android:
 ```
-./build.sh mono+libs -os Android -arch x64
+./build.sh mono+libs -os android -arch x64
 ```
 and even run tests one by one for each library:
 ```
-./build.sh libs.tests -os Android -arch x64 -test
+./build.sh libs.tests -os android -arch x64 -test
 ```
 Make sure an emulator is booted (see [`AVD Manager`](#avd-manager)) or a device is plugged in and unlocked.
 `AVD Manager` tool recommends to install `x86` images by default so if you follow that recommendation make sure `-arch x86` was used for the build script.
@@ -147,7 +147,7 @@ ${ANDROID_SDK_ROOT}/emulator/emulator -avd ${EMULATOR_NAME_X64} &
 The emulator can be launched with a variety of options. Run `emulator -help` to see the full list.
 
 ### Existing Limitations
-- `-os Android` is not supported for Windows yet (`WSL` can be used instead)
+- `-os android` is not supported for Windows yet (`WSL` can be used instead)
 - XHarness.CLI is not able to boot emulators yet (so you need to boot via `AVD Manager` or IDE)
 - AOT and Interpreter modes are not supported yet
 
