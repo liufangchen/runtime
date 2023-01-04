@@ -10,7 +10,7 @@ fi
 case "$OSName" in
 freebsd|linux|netbsd|openbsd|sunos|android)
     os="$OSName" ;;
-Darwin)
+darwin)
     os=osx ;;
 *)
     echo "Unsupported OS $OSName detected!"
