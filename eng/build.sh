@@ -263,7 +263,7 @@ while [[ $# > 0 ]]; do
         linux)
           os="linux" ;;
         freebsd)
-          os="freebsdD" ;;
+          os="freebsd" ;;
         osx)
           os="osx" ;;
         maccatalyst)

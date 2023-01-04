@@ -7,7 +7,7 @@ initTargetDistroRid()
     local passedRootfsDir=""
 
     # Only pass ROOTFS_DIR if cross is specified and the target platform is not Darwin that doesn't use rootfs
-    if [[ "$__CrossBuild" == 1 && "$platform" != "Darwin" ]]; then
+    if [[ "$__CrossBuild" == 1 && "$platform" != "darwin" ]]; then
         passedRootfsDir="$ROOTFS_DIR"
     fi
 
@@ -236,12 +236,12 @@ __BuildOS=$os
 __OutputRid=''
 
 # Get the number of processors available to the scheduler
-platform="$(uname)"
-if [[ "$platform" == "FreeBSD" ]]; then
+platform="$(uname -s | tr '[A-Z]' '[a-z]')"
+if [[ "$platform" == "freebsd" ]]; then
   __NumProc="$(($(sysctl -n hw.ncpu)+1))"
-elif [[ "$platform" == "NetBSD" || "$platform" == "SunOS" ]]; then
+elif [[ "$platform" == "netbsd" || "$platform" == "sunos" ]]; then
   __NumProc="$(($(getconf NPROCESSORS_ONLN)+1))"
-elif [[ "$platform" == "Darwin" ]]; then
+elif [[ "$platform" == "darwin" ]]; then
   __NumProc="$(($(getconf _NPROCESSORS_ONLN)+1))"
 elif command -v nproc > /dev/null 2>&1; then
   __NumProc="$(nproc)"
@@ -478,7 +478,7 @@ if [[ "$__CrossBuild" == 1 ]]; then
     CROSSCOMPILE=1
     export CROSSCOMPILE
     # Darwin that doesn't use rootfs
-    if [[ -z "$ROOTFS_DIR" && "$platform" != "Darwin" ]]; then
+    if [[ -z "$ROOTFS_DIR" && "$platform" != "darwin" ]]; then
         ROOTFS_DIR="$__RepoRootDir/.tools/rootfs/$__TargetArch"
         export ROOTFS_DIR
     fi
