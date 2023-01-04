@@ -289,7 +289,7 @@
                             HostArchitecture=$(CrossDacHostArch);
                             PgoInstrument=false;
                             NoPgoOptimize=true;
-                            TargetOS=Linux;
+                            TargetOS=linux;
                             CMakeArgs=$(CMakeArgs) -DCLR_CROSS_COMPONENTS_BUILD=1" Category="clr" />
   </ItemGroup>
 

@@ -169,7 +169,7 @@ For libraries that have multiple target frameworks the target frameworks will be
 
 - Build project for Linux
 ```bash
-dotnet build System.Net.NetworkInformation.csproj /p:TargetOS=Linux
+dotnet build System.Net.NetworkInformation.csproj /p:TargetOS=linux
 ```
 
 - Build Release version of library

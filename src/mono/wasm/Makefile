@@ -17,7 +17,7 @@ EMSDK_PATH?=$(TOP)/src/mono/wasm/emsdk
 CONFIG?=Release
 BINDIR?=$(TOP)/artifacts/bin
 OBJDIR?=$(TOP)/artifacts/obj
-_MSBUILD_WASM_BUILD_ARGS=/p:TargetOS=Browser /p:TargetArchitecture=wasm /p:Configuration=$(CONFIG)
+_MSBUILD_WASM_BUILD_ARGS=/p:TargetOS=browser /p:TargetArchitecture=wasm /p:Configuration=$(CONFIG)
 XHARNESS_BROWSER?=chrome
 HELIX_TARGET_QUEUE?=Ubuntu.1804.Amd64.Open
 

@@ -24,7 +24,7 @@ runtimepack:
 run:
 	$(DOTNET) publish \
 	/p:TargetArchitecture=$(MONO_ARCH) \
-	/p:TargetOS=Android \
+	/p:TargetOS=android \
 	/p:Configuration=$(MONO_CONFIG) \
 	/p:DeployAndRun=$(DEPLOY_AND_RUN) \
 	/p:RunAOTCompilation=$(AOT) \

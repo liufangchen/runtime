@@ -77,7 +77,7 @@ anyway.
 
 During development there are many instances where building an individual test is fast and necessary. All of the necessary tools to build are under `coreclr`. It is possible to use `~/runtime/dotnet.sh msbuild` as you would normally use MSBuild with a few caveats.
 
-**!! Note !! -- Passing /p:TargetOS=[OSX|Linux] is required.**
+**!! Note !! -- Passing /p:TargetOS=[osx|linux] is required.**
 
 ## Building an Individual Test
 

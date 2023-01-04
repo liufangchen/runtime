@@ -58,7 +58,7 @@ Other possible options are:
 
 - The following shows how to run tests for a specific library:
 ```
-./dotnet.sh build src/libraries/System.Numerics.Vectors/tests /t:Test /p:TargetOS=iOS /p:TargetArchitecture=x64
+./dotnet.sh build src/libraries/System.Numerics.Vectors/tests /t:Test /p:TargetOS=ios /p:TargetArchitecture=x64
 ```
 
 Also you can run the built test app through Xcode by opening the corresponding `.xcodeproj` and setting up the right scheme, app, and even signing if using a local device.
@@ -84,7 +84,7 @@ There are [functional tests](https://github.com/dotnet/runtime/tree/main/src/tes
 
 A functional test can be run the same way as any library test suite, e.g.:
 ```
-./dotnet.sh build /t:Test -c Release /p:TargetOS=iOSSimulator /p:TargetArchitecture=x64 src/tests/FunctionalTests/iOS/Simulator/PInvoke/iOS.Simulator.PInvoke.Test.csproj
+./dotnet.sh build /t:Test -c Release /p:TargetOS=iossimulator /p:TargetArchitecture=x64 src/tests/FunctionalTests/iOS/Simulator/PInvoke/iOS.Simulator.PInvoke.Test.csproj
 ```
 
 Currently functional tests are expected to return `42` as a success code so please be careful when adding a new one.
