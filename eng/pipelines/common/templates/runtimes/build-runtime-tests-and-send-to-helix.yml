@@ -1,7 +1,7 @@
 parameters:
   buildConfig: ''
   archType: 'wasm'
-  osGroup: 'Browser'
+  osGroup: 'browser'
   osSubgroup: ''
   container: ''
   testGroup: ''
